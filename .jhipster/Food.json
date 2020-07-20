@@ -1,0 +1,61 @@
+{
+  "name": "Food",
+  "fields": [
+    {
+      "fieldName": "foodid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "categoryid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "foodname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "billdetail",
+      "otherEntityRelationshipName": "food",
+      "relationshipName": "billdetail",
+      "otherEntityField": "billdetailid",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "category",
+      "otherEntityRelationshipName": "food",
+      "relationshipName": "category",
+      "otherEntityField": "categoryid",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "warehouse",
+      "otherEntityRelationshipName": "food",
+      "relationshipName": "warehouse",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20200720144827",
+  "entityTableName": "food",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

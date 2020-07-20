@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="coupon">
+            <h2><span jhiTranslate="foodApp.coupon.detail.title">Coupon</span> {{ coupon.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="foodApp.coupon.couponid">Couponid</span></dt>
+                <dd>
+                    <span>{{ coupon.couponid }}</span>
+                </dd>
+                <dt><span jhiTranslate="foodApp.coupon.couponname">Couponname</span></dt>
+                <dd>
+                    <span>{{ coupon.couponname }}</span>
+                </dd>
+                <dt><span jhiTranslate="foodApp.coupon.coupon">Coupon</span></dt>
+                <dd>
+                    <span>{{ coupon.coupon }}</span>
+                </dd>
+                <dt><span jhiTranslate="foodApp.coupon.type">Type</span></dt>
+                <dd>
+                    <span>{{ coupon.type }}</span>
+                </dd>
+                <dt><span jhiTranslate="foodApp.coupon.bill">Bill</span></dt>
+                <dd>
+                    <div *ngIf="coupon.bill">
+                        <a [routerLink]="['/bill', coupon.bill?.id, 'view']">{{ coupon.bill?.billid }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/coupon', coupon.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

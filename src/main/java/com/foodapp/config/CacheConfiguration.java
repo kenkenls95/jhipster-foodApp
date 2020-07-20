@@ -47,6 +47,14 @@ public class CacheConfiguration {
             createCache(cm, com.foodapp.domain.User.class.getName());
             createCache(cm, com.foodapp.domain.Authority.class.getName());
             createCache(cm, com.foodapp.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.foodapp.domain.Food.class.getName());
+            createCache(cm, com.foodapp.domain.Food.class.getName() + ".categories");
+            createCache(cm, com.foodapp.domain.Category.class.getName());
+            createCache(cm, com.foodapp.domain.Category.class.getName() + ".foods");
+            createCache(cm, com.foodapp.domain.Bill.class.getName());
+            createCache(cm, com.foodapp.domain.Billdetail.class.getName());
+            createCache(cm, com.foodapp.domain.Coupon.class.getName());
+            createCache(cm, com.foodapp.domain.Warehouse.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
