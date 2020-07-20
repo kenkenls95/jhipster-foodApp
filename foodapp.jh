@@ -1,0 +1,75 @@
+
+entity Food {
+foodid Integer,
+categoryid Integer,
+foodname String,
+description String,
+price Decimal
+}
+
+entity Category {
+categoryid Integer,
+categoryname String
+}
+
+relationship ManyToMany{
+Food{Category(categoryid)} to Category{Food(foodid)}
+}
+
+entity Bill {
+billid Integer,
+date Datetime,
+totalprice Decimal,
+couponid Integer,
+shipping Boolean
+}
+
+entity BillDetail {
+billdetailid Integer,
+foodid Integer
+}
+
+entity Coupon {
+couponid Integer,
+couponname String,
+coupon Integer,
+type String
+}
+
+relationship OneToOne{
+Coupon{Bill(billid)} to Bill{Coupon(billid)}
+}
+
+relationship OneToOne{
+Food{BillDetail(billdetailid)} to BillDetail{Food(foodid)}
+}
+
+entity Warehouse {
+warehouseid Integer,
+foodid Integer,
+quantity Integer,
+date Datetime
+}
+
+relationship OneToOne{
+Warehouse{Food(foodid)} to Food{Warehouse(warehouseid)}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
