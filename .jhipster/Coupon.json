@@ -1,0 +1,42 @@
+{
+  "name": "Coupon",
+  "fields": [
+    {
+      "fieldName": "couponid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "couponname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "coupon",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "bill",
+      "otherEntityRelationshipName": "coupon",
+      "relationshipName": "bill",
+      "otherEntityField": "billid",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20200720145243",
+  "entityTableName": "coupon",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
