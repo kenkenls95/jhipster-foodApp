@@ -1,0 +1,45 @@
+{
+  "name": "Bill",
+  "fields": [
+    {
+      "fieldName": "billid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "totalprice",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "couponid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "shipping",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "coupon",
+      "otherEntityRelationshipName": "bill",
+      "relationshipName": "coupon",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20200720145027",
+  "entityTableName": "bill",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
