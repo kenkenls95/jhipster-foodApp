@@ -1,0 +1,24 @@
+{
+  "foodApp": {
+    "billdetail": {
+      "home": {
+        "title": "Billdetails",
+        "createLabel": "Create a new Billdetail",
+        "createOrEditLabel": "Create or edit a Billdetail",
+        "notFound": "No Billdetails found"
+      },
+      "created": "A new Billdetail is created with identifier {{ param }}",
+      "updated": "A Billdetail is updated with identifier {{ param }}",
+      "deleted": "A Billdetail is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Billdetail {{ id }}?"
+      },
+      "detail": {
+        "title": "Billdetail"
+      },
+      "billdetailid": "Billdetailid",
+      "foodid": "Foodid",
+      "food": "Food"
+    }
+  }
+}

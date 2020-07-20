@@ -1,0 +1,33 @@
+{
+  "name": "Billdetail",
+  "fields": [
+    {
+      "fieldName": "billdetailid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "foodid",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "food",
+      "otherEntityRelationshipName": "billdetail",
+      "relationshipName": "food",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20200720145143",
+  "entityTableName": "billdetail",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

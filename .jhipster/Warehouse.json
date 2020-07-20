@@ -1,0 +1,42 @@
+{
+  "name": "Warehouse",
+  "fields": [
+    {
+      "fieldName": "warehouseid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "foodid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "food",
+      "otherEntityRelationshipName": "warehouse",
+      "relationshipName": "food",
+      "otherEntityField": "foodid",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20200720145343",
+  "entityTableName": "warehouse",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

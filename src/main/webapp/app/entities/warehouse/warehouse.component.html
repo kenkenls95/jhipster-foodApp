@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="foodApp.warehouse.home.title">Warehouses</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-warehouse" [routerLink]="['/warehouse/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="foodApp.warehouse.home.createLabel">
+            Create a new Warehouse
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="warehouses?.length === 0">
+        <span jhiTranslate="foodApp.warehouse.home.notFound">No warehouses found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="warehouses && warehouses.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="foodApp.warehouse.warehouseid">Warehouseid</span></th>
+                    <th scope="col" ><span jhiTranslate="foodApp.warehouse.foodid">Foodid</span></th>
+                    <th scope="col" ><span jhiTranslate="foodApp.warehouse.quantity">Quantity</span></th>
+                    <th scope="col" ><span jhiTranslate="foodApp.warehouse.date">Date</span></th>
+                    <th scope="col" ><span jhiTranslate="foodApp.warehouse.food">Food</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let warehouse of warehouses ;trackBy: trackId">
+                    <td><a [routerLink]="['/warehouse', warehouse.id, 'view']">{{ warehouse.id }}</a></td>
+                    <td>{{ warehouse.warehouseid }}</td>
+                    <td>{{ warehouse.foodid }}</td>
+                    <td>{{ warehouse.quantity }}</td>
+                    <td>{{ warehouse.date | date:'mediumDate' }}</td>
+                    <td>
+                        <div *ngIf="warehouse.food">
+                            <a [routerLink]="['/food', warehouse.food?.id, 'view']" >{{ warehouse.food?.foodid }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/warehouse', warehouse.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/warehouse', warehouse.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(warehouse)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
